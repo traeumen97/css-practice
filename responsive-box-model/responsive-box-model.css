@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #544179;
+}
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 1000px;
+    height: 500px;
+    display: flex;
+}
+.container .box {
+    position: relative;
+    width: 250px;
+    height: 500px;
+    background: #ccc;
+    transition: 0.5s;
+}
+.container .box:hover {
+    transform: scale(1.1);
+    z-index: 1;
+    box-shadow: 0 5px 20px rgba(0,0,0,1);
+}
+.container .box .thumb {
+    position: absolute;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+.container .box:nth-child(odd) .thumb {
+    bottom: 0;
+    left: 0;
+}
+.container .box .thumb {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.container .box:nth-child(1) .thumb {
+    background-image: url('appleDevice.jpeg');
+}
+.container .box:nth-child(2) .thumb {
+    background-image: url('iMac.jpeg');
+}
+.container .box:nth-child(3) .thumb {
+    background-image: url('iPad.jpeg');
+}
+.container .box:nth-child(4) .thumb {
+    background-image: url('iPhone.jpeg');
+}
+.container .box .details {
+    position: absolute;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    background: #262626;
+}
+.container .box:nth-child(even) .details {
+    bottom: 0;
+    left: 0;
+}
+.container .box .details {
+    background: #f3f3f3;   
+}
+/* .container .box:nth-child(2) .details {
+    background: #fe8f01;   
+}
+.container .box:nth-child(3) .details {
+    background: #79d400;   
+}
+.container .box:nth-child(4) .details {
+    background: #ff3b34;   
+} */
+.container .box .details .content {
+    position: absolute;
+    top: calc(50% + 16px);
+    transform: translateY(-50%);
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    transition: 0.5s;
+}
+.container .box:hover .details .content {
+    top: calc(50%);
+}
+.container .box .details .content .fas,
+.container .box .details .content .fa,
+.container .box .details .content .fab {
+    font-size: 80px;
+    color: #aaa;
+}
+.container .box .details .content h3 {
+    margin: 0;
+    padding: 0;
+    padding: 10px 0;;
+    color: #aaa;
+}
+.container .box .details .content a {
+    display: inline-block;
+    padding: 5px 20px;
+    color: #aaa;
+    border: 2px solid #aaa;
+    transition: 0.5s;
+    text-decoration: none;
+    border-radius: 20px;
+    transform: scale(0);
+}
+.container .box:hover .details .content a {
+    transform: scale(1);
+}
+.container .box .details .content a:hover {
+    background: #aaa;
+    color: #fff;
+}
