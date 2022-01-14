@@ -1,23 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style02.css">
     <title>Carousel-Test</title>
   </head>
   <body>
-    <div class="wrap">
-      <div class="container">
-        <div class="inner">
-          <img src="img/bg01.jpg">
+    <div class="slider">
+      <div class="slides">
+        <!-- radio button start -->
+        <input type="radio" name="radio-btn" id="radio1">
+        <input type="radio" name="radio-btn" id="radio2">
+        <input type="radio" name="radio-btn" id="radio3">
+        <input type="radio" name="radio-btn" id="radio4">
+        <!-- slider images start -->
+        <div class="slide first">
+          <img src="img/bg01.jpg" alt="bg01">
         </div>
-        <div class="inner">
-          <img src="img/bg02.jpg">
+        <div class="slide">
+          <img src="img/bg02.jpg" alt="bg02">
         </div>
-        <div class="inner">
-          <img src="img/bg03.jpg">
+        <div class="slide">
+          <img src="img/bg03.jpg" alt="bg03">
+        </div>
+        <div class="slide">
+          <img src="img/bg04.jpg" alt="bg04">
+        </div>
+        <!-- automatic navigation start -->
+        <div class="navigation-auto">
+          <div class="auto-btn1"></div>
+          <div class="auto-btn2"></div>
+          <div class="auto-btn3"></div>
+          <div class="auto-btn4"></div>
         </div>
       </div>
+      <!-- manual navigation start -->
+      <div class="navigation-manual">
+        <label for="radio1" class="manual-btn"></label>
+        <label for="radio2" class="manual-btn"></label>
+        <label for="radio3" class="manual-btn"></label>
+        <label for="radio4" class="manual-btn"></label>
+      </div>
     </div>
+    <script type="text/javascript">
+      var counter = 1;
+      setInterval(function(){
+        document.getElementById('radio' + counter).checked = true;
+        counter++;
+        if(counter > 4) {
+          counter = 1;
+        }
+      }, 7000);
+    </script>
   </body>
 </html>
